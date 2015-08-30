@@ -27,11 +27,10 @@
       ```
       * Visual Studio will download jspm when you save the file and put the package in the Dependencies
 3. Configure Jspm
+
    ```
    jspm init
-   ```
    use defaults except:
-   ```      
    Enter server baseURL (public folder path) [./]:wwwroot/
    Do you wish to use an ES6 transpiler? [yes]:n
    ```
@@ -88,15 +87,15 @@
    }
    }
    ```
-   config.js will look like this
-   ```json
+   config.js will look like this:
+   ```JavaScript
    System.config({
-   baseURL: "/",
-   defaultJSExtensions: true,
-   transpiler: "none"
-   paths: {
-    "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+      baseURL: "/",
+      defaultJSExtensions: true,
+      transpiler: "none"
+      paths: {
+       "github:*": "jspm_packages/github/*",
+       "npm:*": "jspm_packages/npm/*"
    },
 
    map: {
@@ -144,7 +143,7 @@
    ```
 5. Configure TypeScript transpiler
    * set typescript as the transpiler and configure the paths (src)
-   ```json
+   ```JavaScript
    System.config({
    baseURL: "/",
    defaultJSExtensions: true,
@@ -160,7 +159,7 @@
    - under **wwwroot** add a **src** folder with
   
    **app.ts**
-   ```
+   ```TypeScript
    import { Greeter } from 'greeter'
 
    export function main(el: HTMLElement): void {
@@ -169,7 +168,7 @@
    }
    ```
    **greeter.ts**   
-   ```
+   ```TypeScript
    import repeat from "core-js/fn/string/repeat";
 
    export class Greeter {
@@ -215,7 +214,7 @@
    ```
 7. do a testrun by starting IISExpress 
    * comment the default Startup.Configure implementation 
-   ```  
+   ```C#  
         public void Configure(IApplicationBuilder app)
         {
             //app.Run(async (context) =>
@@ -278,7 +277,7 @@
    Only issue at this time of writing is that VS complains that the core-js module has no default export.
    
    To fix this, go the type defintion file (core-js.d.ts) and add default manualy
-   ```
+   ```TypeScript
    declare module "core-js/fn/string/repeat" {
      var repeat: typeof core.String.repeat;
      export default repeat;
