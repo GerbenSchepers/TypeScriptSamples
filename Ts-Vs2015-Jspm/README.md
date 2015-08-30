@@ -2,19 +2,24 @@
 ==================================================
 **See Also**
 
-* [https://github.com/jspm/jspm-cli/wiki/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
+* jspm [https://github.com/jspm/jspm-cli/wiki/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
+* tsconfig [http://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html](http://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html)
+* tsd [http://definitelytyped.org/tsd/](http://definitelytyped.org/tsd/)
+* TypeScript[https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript)
+* Definitelytyped: [http://definitelytyped.org/](http://definitelytyped.org/)
 
 **Steps**
 
 1. File - New Project - ASP.NET 5 empty template
 2. Add Jspm using
 
-   - command line and node (prerequisite)
+   - command line and node
    ```
    npm install jspm --save-dev
    ```
    - Visual Studio's Dependencies packaging system
-     * Add *NPM Configuration file* named package.json:
+     * Add *NPM Configuration file*
+     * Visual Studio will download jspm and put the package in the Dependencies on save of package.json
       ```json
       {
         "version": "1.0.0",
@@ -25,7 +30,7 @@
          }
       }
       ```
-      * Visual Studio will download jspm when you save the file and put the package in the Dependencies
+
 3. Configure Jspm
 
    ```
@@ -53,7 +58,7 @@
    ```
    jspm_packages will be added in wwwroot
    config.js file is created and looks like
-   ```json
+   ```JavaScript
    System.config({
      baseURL: "/",
      defaultJSExtensions: true,
@@ -145,14 +150,14 @@
    * set typescript as the transpiler and configure the paths (src)
    ```JavaScript
    System.config({
-   baseURL: "/",
-   defaultJSExtensions: true,
-   transpiler: "typescript",
-   paths: {
-    "*": "src/*",
-    "src": "src",
-    "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
+      baseURL: "/",
+      defaultJSExtensions: true,
+      transpiler: "typescript",
+      paths: {
+       "*": "src/*",
+       "src": "src",
+       "github:*": "jspm_packages/github/*",
+       "npm:*": "jspm_packages/npm/*"
    },
    ```
 6. Add some typescript files
@@ -215,27 +220,27 @@
 7. do a testrun by starting IISExpress 
    * comment the default Startup.Configure implementation 
    ```C#  
-        public void Configure(IApplicationBuilder app)
-        {
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
-        }
+   public void Configure(IApplicationBuilder app)
+   {
+      //app.Run(async (context) =>
+      //{
+      //    await context.Response.WriteAsync("Hello World!");
+      //});
+   }
    ```   
 8. Configure Visual Studio intelliSense for TypeScript to fix the VS errors for the line import repeat from "core-js/fn/string/repeat"; We need to tell vs to use the amd module loader.    
    
    Add TypeScript JSON Configuration File **tsconfig.json** in the wwwroot folder
    ```json    
    {
-   "compilerOptions": {
-    "module": "amd",
-    "noImplicitAny": false,
-    "noEmitOnError": true,
-    "removeComments": false,
-    "sourceMap": true,
-    "target": "es5"
-   }
+    "compilerOptions": {
+      "module": "amd",
+      "noImplicitAny": false,
+      "noEmitOnError": true,
+      "removeComments": false,
+      "sourceMap": true,
+      "target": "es5"
+    }
    }
    ```
 9. Configure Type definition files to fix the 'Cannot find module 'core-js/fn/string/repeat' error in VS.
@@ -252,25 +257,24 @@
    contents tsd.json
    ```json
    {
-   "version": "v4",
-   "repo": "borisyankov/DefinitelyTyped",
-   "ref": "master",
-   "path": "typings",
-   "bundle": "typings/tsd.d.ts",
-   "installed": {
-    "core-js/core-js.d.ts": {
-      "commit": "de1bfe2c1de921da660cc17a5af1de6c095b35eb"
+    "version": "v4",
+    "repo": "borisyankov/DefinitelyTyped",
+    "ref": "master",
+    "path": "typings",
+    "bundle": "typings/tsd.d.ts",
+    "installed": {
+     "core-js/core-js.d.ts": {
+       "commit": "de1bfe2c1de921da660cc17a5af1de6c095b35eb"
     }
    }
    }
    ```
    contents tsd.d.ts
-   ```
+   ```C#
    /// <reference path="core-js/core-js.d.ts" />
-
    ```
    Drag the tsd.d.ts file over to greeter.js and the the reference will be added to the file.
-   ```
+   ```C#
    /// <reference path="../../typings/tsd.d.ts" />
    import repeat from "core-js/fn/string/repeat";
    ```
