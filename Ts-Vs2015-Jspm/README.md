@@ -1,14 +1,20 @@
-﻿TypeScript sample with Visual Studio 2015 and Jspm
-==================================================
-**See Also**
+﻿TypeScript sample with Visual Studio 2015, Jspm, tsd.
+-----------------------------------------------------
+**Set the stage**
+* This sample is for Visual Studio developers to get started with Jspm and TypeScript.
+* No grunt or gulp needed (so far). Limited use of command line to see what Visual Studio 2015 out of the box can do.
+* TypeScript is configured as transpiler (requires at least jspm 0.16).
+* Visual Studio IntelliSense is configured using tsd.
+* **todo**: bundling using jspm.
 
-* jspm [https://github.com/jspm/jspm-cli/wiki/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
-* tsconfig [http://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html](http://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html)
-* tsd [http://definitelytyped.org/tsd/](http://definitelytyped.org/tsd/)
-* TypeScript[https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript)
+**Credits**
+* jspm: [https://github.com/jspm/jspm-cli/wiki/Getting-Started](https://github.com/jspm/jspm-cli/wiki/Getting-Started)
+* tsconfig: [http://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html](http://basarat.gitbooks.io/typescript/content/docs/project/tsconfig.html)
+* tsd: [http://definitelytyped.org/tsd/](http://definitelytyped.org/tsd/)
+* TypeScript: [https://github.com/Microsoft/TypeScript](https://github.com/Microsoft/TypeScript)
 * Definitelytyped: [http://definitelytyped.org/](http://definitelytyped.org/)
 
-**Steps**
+**Replay Repo**
 
 1. File - New Project - ASP.NET 5 empty template
 2. Add Jspm using
