@@ -1,5 +1,8 @@
 ﻿TypeScript sample with Visual Studio 2015, Jspm, tsd.
 -----------------------------------------------------
+*note: VS does not play nicely with jspm and typescript, you still need a compiler for the ts files. So for now, this repo is not functioning as expected. 
+I'll try to fix it at a later stage. It is a solid foundation to start from and use gulp, grunt...*
+
 **Set the stage**
 * This sample is for Visual Studio developers to get started with Jspm and TypeScript.
 * No grunt or gulp needed (so far). Limited use of command line to see what Visual Studio 2015 out of the box can do.
