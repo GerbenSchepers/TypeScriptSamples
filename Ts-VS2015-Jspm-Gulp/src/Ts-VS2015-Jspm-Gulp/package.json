@@ -1,0 +1,26 @@
+{
+  "jspm": {
+    "directories": {
+      "baseURL": "dev/app"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.22",
+      "babel-runtime": "npm:babel-runtime@^5.8.20",
+      "core-js": "npm:core-js@^1.1.0"
+    }
+  },
+  "devDependencies": {
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-flatten": "^0.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-typescript": "^2.8.1",
+    "merge2": "^0.3.6",
+    "gulp-load-plugins": "^1.0.0-rc.1",
+    "jspm": "^0.16.2",
+    "require-dir": "^0.3.0",
+    "vinyl-paths": "^2.0.0"
+  }
+}
